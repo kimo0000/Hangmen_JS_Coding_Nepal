@@ -1,0 +1,201 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  background-color: turquoise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 10;
+}
+
+.modal.show {
+  visibility: visible;
+}
+
+.content {
+  background-color: #fff;
+  width: 50%;
+  padding: 15px;
+  border-radius: 12px;
+  display: grid;
+  grid-template: repeat(4, auto) / 1fr;
+  place-items: center;
+  gap: 15px;
+}
+
+.content h1 {
+  font-size: 30px;
+  color: red;
+}
+
+.content img {
+  width: 180px;
+  text-align: center;
+}
+
+.content p b {
+  color: blueviolet;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.content .play_again {
+  padding: 8px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.content .play_again:hover {
+  opacity: 0.5;
+}
+
+.container {
+  width: 80%;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+@media (max-width: 840px) {
+  .container {
+    grid-template: repeat(2, auto) / auto;
+  }
+}
+
+.hangman {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 840px) {
+  .hangman {
+    align-items: center;
+  }
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+}
+
+@media (max-width: 840px) {
+  .hangman h1 {
+    display: none;
+  }
+}
+
+.hang_score {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  gap: 15px;
+}
+
+.words {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  /* background-color: red; */
+}
+
+.words li {
+  width: 20px;
+  height: 20px;
+  border-bottom: 3px solid #000;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.words li.guess {
+  border-color: transparent;
+  margin: 15px 0 45px;
+}
+
+.paragraph .hint {
+  color: #f50;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.score {
+  text-align: center;
+}
+
+.score .correct {
+  color: #f50;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.keybord {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  place-items: center;
+  gap: 10px;
+}
+
+.keybord button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.keybord button[disabled] {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .keybord button {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.keybord button:hover {
+  opacity: 0.5;
+}
